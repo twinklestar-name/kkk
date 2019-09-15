@@ -1,0 +1,223 @@
+body
+{
+  margin:0;
+}
+nav
+{
+  background-color:blue;
+  box-shadow:2px 2px 3px grey;
+  height:65px;
+  font-family: "Gill Sans", sans-serif;
+  position:sticky;
+  top:0;
+}
+#shop
+{
+  font-size:30px;
+  padding-left:90px;
+}
+#lane
+{
+  font-size:30px;
+  padding-right:30px;
+}
+.topbar2
+{
+  font-size:15px;
+  padding-right:20px;
+}
+input
+{
+  color:grey;
+  width:400px;
+  height:25px;
+  background-color: lightgrey;
+  border:none;
+}
+#zoom
+{
+  position:absolute;
+  left:540px;
+  top:14px;
+  color:grey;
+}
+#logo
+{
+  position:absolute;
+  width:15px;
+  height: 15px;
+  color:black;
+  right:180px;
+  top:14px;
+}
+#profile-pic
+{
+  width:36px;
+  height:36px;
+  border-radius:18px;
+  float:right;
+  padding-right:90px;
+}
+#slick-cona
+{
+  height:450px;
+}
+#main-section
+{
+  height:500px;
+  text-align:center ;
+  color:darkorchid;
+}
+#order-place-logo
+{
+  padding-top:20px;
+}
+#logo-1
+{
+  background-color:brown;
+}
+#logo-2
+{
+  background-color:brown;
+}
+.heading-3
+{
+  padding-left:100px;
+}
+#main
+{
+  box-sizing: border-box;
+  padding:10px;
+}
+.item
+{
+  border:2px solid pink;
+  display:inline-block;
+  padding:20px;
+}
+.name
+{
+  padding:5px;
+  width:200px;
+  font-size:20px;
+}
+.brand
+{
+  padding:5px;
+  width:100px;
+  font-size:10px;
+}
+.price
+{
+  padding:5px;
+  width:70px;
+  font-size:10px;
+  color:blue;
+}
+#main2
+{
+  display:inline;
+}
+.selected-item
+{
+  border:1px solid grey;
+  margin-left:100px;
+  margin-bottom: 50px;
+  color:blue;
+  width:500px;
+  height:100px;
+  display:flex;
+}
+.description
+{
+  padding-top:10px;
+  margin-top:10px;
+}
+.selected-item-name
+{
+  padding:10px;
+  margin:0;
+  padding-left:30px;
+}
+.size
+{
+  padding:8px;
+  margin:0;
+  padding-left:30px;
+}
+.selected-item-price
+{
+  padding:8px;
+  padding-left:30px;
+}
+#total-amount
+{
+  border:1px solid brown;
+  width:40%;
+  height:400px;
+  margin-right:50px;
+  margin-bottom:50px;
+  margin-left:300px;
+}
+#total
+{
+  padding-left:50px;
+}
+#amount
+{
+  padding-left:50px;
+}
+#btn
+{
+  padding:20px;
+  margin-left:50px;
+}
+
+#selected-page
+{
+  display:flex;
+}
+section
+{
+  margin:100px;
+}
+#pdt-desc
+{
+  margin:100px;
+}
+#page-2 div
+{
+  display:flex;
+}
+.head
+{
+  color:blue;
+}
+.pdt-name
+{
+  color:red;
+}
+
+footer
+{
+  background-color: black;
+}
+#logo-1
+{
+  color:skyblue;
+}
+#logo-2
+{
+  color:grey;
+}
+footer div
+{
+  color:white;
+}
+.footer-content
+{
+  display:inline-block;
+  padding:50px;
+  padding-left:120px;
+  font-size:10px;
+}

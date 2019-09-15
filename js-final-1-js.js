@@ -1,0 +1,120 @@
+console.log("js-loaded");
+$(document).ready(function(){
+  $('#slick-cona').slick({
+    dots:true,
+    //infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
+});
+
+
+/*<span class="item-wrapper">
+<a href="/nikita3/niki4/slick-demo/js-final-2-html.html">
+        <span class="item">
+            <img class="item-img" src="https://i.pinimg.com/originals/d4/30/57/d43057dbc53e7309ae5bb6eac27e9bc6.jpg"/>
+            <h3  class="description">hello</h3>
+            <h5  class="description">we will meet</h5>
+            <div  class="description">$ 50</div>
+        </span>
+        </a>
+        </span>*/
+
+
+function shoppingItems(imageval,name,brand,priceval){
+  var itemsWrapper=document.createElement('span');
+  itemsWrapper.className="item-wrapper";
+
+  var itemLink=document.createElement('a')
+  itemLink.href="/nikita3/niki4/slick-demo/js-final-2-html.html";
+
+  var item=document.createElement('span');
+  item.className="item";
+  itemsWrapper.appendChild(itemLink);
+  itemLink.appendChild(item);
+
+  var image=document.createElement('img');
+  image.className="item-img";
+  image.setAttribute("src",imageval);
+  //image.setAttribute("width","100%");
+  image.setAttribute("height","120px");
+  item.appendChild(image);
+
+  var heading1=document.createElement('h3');
+  heading1.className="name";
+
+  var heading1Value=document.createTextNode(name);
+  heading1.appendChild(heading1Value);
+  item.appendChild(heading1);
+
+  var heading2=document.createElement('h5');
+  heading2.className="brand";
+
+  var heading2Value=document.createTextNode(brand);
+  heading2.appendChild(heading2Value);
+  item.appendChild(heading2);
+
+  var price=document.createElement('div');
+  price.className="price";
+
+  var priceValue=document.createTextNode('price: '+priceval);
+  price.appendChild(priceValue);
+  item.appendChild(price);
+  //console.log(itemsWrapper);
+
+  return itemsWrapper;
+}
+var cardName=document.getElementById('main');
+//console.log(cardName);
+//cardName.appendChild(shoppingItems());
+
+function getobjects(){
+var httpRequest= new XMLHttpRequest();
+httpRequest.onreadystatechange=function(){
+  if(this.readyState===4)
+  {
+    console.log("response is ready");
+    if(this.status==200)
+    {
+      console.log('call is successful')
+      var array=JSON.parse(this.responseText);
+      for(var i=0;i<array.length-4;i++)
+      {
+        if(array[i].isAccessory==false)
+        {
+        console.log(array[i])
+        var cards=shoppingItems(array[i].preview,array[i].name,array[i].brand,array[i].price);
+        cardName.appendChild(cards);
+        }
+      }
+       
+          var heading2=document.getElementById('heading')
+          var mainHeading2=document.createElement('h1')
+          var value=document.createTextNode('Accessories for Men and Women');
+          mainHeading2.appendChild(value);
+          heading2.appendChild(mainHeading2);
+
+          for(var i=0;i<array.length;i++)
+          {
+          if(array[i].isAccessory==true)
+          {
+
+          console.log(array[i])
+          var cards=shoppingItems(array[i].preview,array[i].name,array[i].brand,array[i].price);
+          cardName.appendChild(cards);
+          }
+      }
+    }
+    else{
+      console.log('call failed')
+    }
+  }
+}
+httpRequest.open('GET','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
+//httpRequest.open('POST','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
+httpRequest.send();
+}
+getobjects();
+
