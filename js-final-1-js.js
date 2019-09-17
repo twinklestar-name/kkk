@@ -11,6 +11,13 @@ $(document).ready(function(){
 });
 
 
+/*var heading2=document.getElementById('heading')
+          var mainHeading2=document.createElement('h3')
+          var value=document.createTextNode('Accessories for Men and Women');
+          mainHeading2.appendChild(value);
+          heading2.appendChild(mainHeading2);*/
+
+
 /*<span class="item-wrapper">
 <a href="/nikita3/niki4/slick-demo/js-final-2-html.html">
         <span class="item">
@@ -22,8 +29,19 @@ $(document).ready(function(){
         </a>
         </span>*/
 
+document.body.addEventListener("click",function(event){
+  if(event.target.className=="item")
+  {
+  window.localStorage.setItem("id",event.target.id);
+  console.log(window.localStorage.getItem("id"));
+  window.open("/nikita3/niki4/slick-demo/js-final-2-html.html");
+  }
+})
 
-function shoppingItems(imageval,name,brand,priceval){
+          
+
+
+function shoppingItems(idval,imageval,name,brand,priceval){
   var itemsWrapper=document.createElement('span');
   itemsWrapper.className="item-wrapper";
 
@@ -32,14 +50,16 @@ function shoppingItems(imageval,name,brand,priceval){
 
   var item=document.createElement('span');
   item.className="item";
+  item.id=idval;
   itemsWrapper.appendChild(itemLink);
   itemLink.appendChild(item);
 
   var image=document.createElement('img');
   image.className="item-img";
   image.setAttribute("src",imageval);
-  //image.setAttribute("width","100%");
-  image.setAttribute("height","120px");
+  image.setAttribute("width","150px");
+  image.setAttribute("height","200px");
+  //image.setAttribute("padding-right","20px");
   item.appendChild(image);
 
   var heading1=document.createElement('h3');
@@ -66,9 +86,8 @@ function shoppingItems(imageval,name,brand,priceval){
 
   return itemsWrapper;
 }
+
 var cardName=document.getElementById('main');
-//console.log(cardName);
-//cardName.appendChild(shoppingItems());
 
 function getobjects(){
 var httpRequest= new XMLHttpRequest();
@@ -80,32 +99,36 @@ httpRequest.onreadystatechange=function(){
     {
       console.log('call is successful')
       var array=JSON.parse(this.responseText);
-      for(var i=0;i<array.length-4;i++)
+      for(var i=0;i<array.length;i++)
       {
         if(array[i].isAccessory==false)
         {
         console.log(array[i])
-        var cards=shoppingItems(array[i].preview,array[i].name,array[i].brand,array[i].price);
+        var cards=shoppingItems(array[i].id,array[i].preview,array[i].name,array[i].brand,array[i].price);
         cardName.appendChild(cards);
         }
-      }
-       
-          var heading2=document.getElementById('heading')
-          var mainHeading2=document.createElement('h1')
-          var value=document.createTextNode('Accessories for Men and Women');
-          mainHeading2.appendChild(value);
-          heading2.appendChild(mainHeading2);
-
-          for(var i=0;i<array.length;i++)
-          {
-          if(array[i].isAccessory==true)
+        if(array[i].isAccessory==true)
           {
 
           console.log(array[i])
-          var cards=shoppingItems(array[i].preview,array[i].name,array[i].brand,array[i].price);
+          var cards=shoppingItems(array[i].id,array[i].preview,array[i].name,array[i].brand,array[i].price);
           cardName.appendChild(cards);
           }
       }
+          
+      $(document).ready(function(){
+        $('#main').slick({
+        centerMode: true,
+        //centerPadding: '60px',
+        slidesToShow: 3,
+        dots:true,
+          //infinite: true,
+          //slidesToShow: 1,
+          slidesToScroll: 1,
+          //autoplay: true,
+          //autoplaySpeed: 1000
+        });
+      });
     }
     else{
       console.log('call failed')
