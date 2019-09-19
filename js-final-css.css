@@ -1,3 +1,4 @@
+/*--------------------home-page--------------- */
 body
 {
   margin:0;
@@ -74,20 +75,20 @@ input:hover{
 #logo
 {
   position:absolute;
-  width:15px;
-  height: 15px;
+  width:18px;
+  height: 18px;
   color:black;
   right:180px;
   top:35px;
 }
 #logo:hover
 {
-  transform: scale(1.2); 
+  transform: scale(1.3);
 }
 #cart-counting
 {
   position: absolute;
-  top:30px;
+  top:28px;
   right:160px;
   width:20px;
   height:20px;
@@ -112,6 +113,7 @@ input:hover{
 {
   transform: scale(1.1);
 }
+/* ----------------------next-topbar-------------- */
 #topbarnext
 {
   padding:15px;
@@ -126,10 +128,12 @@ input:hover{
 {
   text-decoration: underline;
 }
+/* ----------------------corosoul------------------- */
 #slick-cona
 {
   height:500px;
 }
+/* --------------------main-heading-------------*/
 .heading
 {
   font-family: 'Dancing Script', cursive;
@@ -145,52 +149,7 @@ input:hover{
 {
   color:darkviolet;
 }
-#main-section
-{
-  height:500px;
-  text-align:center ;
-  color:deeppink;
-  background-color:white;
-}
-#order-place-logo
-{
-  padding-top:30px;
-}
-#order-place-logo:hover
-{
-  transform: scale(1.2);
-}
-#logo-1
-{
-  background-color:white;
-  padding:0;
-  margin:0;
-}
-#logo-2
-{
-  background-color:white;
-  padding:0;
-  margin:0;
-}
-.check-out
-{
-  padding-left:100px;
-  color:deeppink;
-}
-.total-items
-{
-  padding-left:100px;
-  color:deeppink; 
-}
-#no-of-items
-{
-  color:white;
-}
-#no-of-items:hover
-{
-  color:purple;
-  text-decoration: underline;
-}
+/* ----------items-corosoul------------------- */
 #main
 {
   box-sizing: border-box;
@@ -217,6 +176,7 @@ input:hover{
   background-color:black;
   border-radius: 8px;
   height:380px;
+  box-shadow:2px 2px 4px black;
 }
 .item:hover
 {
@@ -249,34 +209,54 @@ input:hover{
   color:white;
   font-family: 'Lexend Deca', sans-serif;
 }
-
-
-
-
-
-.selected-item
+/* -------------------footer------------------- */
+footer
 {
-  border:2px solid deeppink;
-  padding:5px;
-  border-radius: 10px;
+  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/30/36/pink-bubble-background-vector-3843036.jpg");
   display:flex;
 }
-#total
+.edyoda-logo
 {
-  color:deeppink;
+  margin-right:0;
+  margin-left:80px;
+  margin-top:100px;
+  text-decoration: none;
 }
-#total:hover
+#logo-1
 {
-  color:purple;
+  font-family: 'Dancing Script', cursive;
+  margin-top:50px;
+  color:blue;
+  font-weight: 1600;
+}
+#logo-2
+{
+  color:grey;
+  font-family: 'Livvic', sans-serif;
+}
+.footer-content
+{
+  display:inline-block;
+  padding:50px;
+  padding-left:120px;
+  font-size:10px;
   text-decoration: underline;
 }
-.amount
+.footer-content:hover
 {
-  color:white;
+  color:blue;
 }
-.amount:hover
+.footer-content div
 {
-  text-decoration: underline;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding:7px;
+}
+/* --------------------detail-page----------------- */
+#detail-img
+{
+  border:2px solid deeppink;
+  padding:8px;
+  border-radius: 10px;
 }
 .poses
 {
@@ -305,6 +285,10 @@ input:hover{
   font-family: 'Permanent Marker', cursive;
   border:2px solid white;
   margin-bottom:0;
+  width:150px;
+  height:80px;
+  font-size:20px;
+  border-radius:10px;
 }
 .cart-btn:hover
 {
@@ -322,120 +306,10 @@ input:hover{
   font-family: 'Permanent Marker', cursive;
   border:2px solid white;
 }
-
-
-
-
-
-
-
-.check-out
-{
-  font-family: 'Hind Vadodara', sans-serif;
-}
-.total-items
-{
-  font-family: 'Handlee', cursive;
-  color:white;
-}
-.total-items:hover
-{
-  text-decoration: underline;
-}
-.check-out:hover
-{
-  color:purple;
-}
-.selected-item:hover
-{
-  background-color: blueviolet;
-  transform:scaleX(1.1);
-}
 #description
 {
   padding-top:7px;
   color:black;
-}
-.selected-item-name
-{
-  padding:7px;
-  margin:0;
-  padding-left:30px;
-  font-family: 'Lexend Deca', sans-serif;
-}
-#img-desc-wrapper
-{
-  display:flex;
-}
-.selected-item
-{
-  border:1px solid black;
-  margin-left:100px;
-  margin-bottom: 50px;
-  color:black;
-  background-color: deeppink;
-  width:600px;
-  height:100px;
-}
-.size
-{
-  margin:0;
-  padding-left:30px;
-  font-family: 'Cardo', serif;
-  font-size:15px;
-}
-.selected-item-price
-{
-  padding-left:30px;
-  padding-top:10px;
-  font-family: 'Cardo', serif;
-  font-size:15px;
-}
-#total-amount
-{
-  border:2px solid deeppink;
-  border-radius:10px;
-  width:50%;
-  height:300px;
-  margin-right:50px;
-  margin-bottom:50px;
-  margin-left:300px;
-  text-align:center;
-}
-#total
-{
-  padding-top:50px;
-  font-family: 'Lexend Deca', sans-serif;
-}
-.amount
-{
-  color:white;
-  padding-right:45px;
-  font-family: 'Courgette', cursive;
-}
-#btn
-{
-  padding:10px;
-  background-color: deeppink;
-  color:black;
-  margin:50px;
-  margin-top:0;
-  margin-right:68px;
-  font-family: 'Satisfy', cursive;
-  border:2px solid white;
-}
-#btn:hover
-{
-  background-color: palevioletred;
-  border:2px solid deeppink;
-}
-#selected-page
-{
-  display:flex;
-}
-section
-{
-  margin:100px;
 }
 #pdt-desc
 {
@@ -444,12 +318,6 @@ section
 #page-2 div
 {
   display:flex;
-}
-#detail-img
-{
-  border:2px solid deeppink;
-  padding:8px;
-  border-radius: 10px;
 }
 .head
 {
@@ -472,6 +340,164 @@ section
   font-family: 'Comfortaa', cursive;
   font-size:20px;
 }
+/* ------------------chk-out page---------------- */
+.check-out
+{
+  padding-left:100px;
+  color:deeppink;
+}
+.total-items
+{
+  padding-left:100px;
+  color:deeppink; 
+}
+#no-of-items
+{
+  color:white;
+}
+#no-of-items:hover
+{
+  color:purple;
+  text-decoration: underline;
+}
+.selected-item
+{
+  border:2px solid deeppink;
+  padding:5px;
+  display:flex;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+}
+#total
+{
+  color:deeppink;
+}
+#total:hover
+{
+  color:purple;
+  text-decoration: underline;
+}
+.amount
+{
+  color:white;
+}
+.amount:hover
+{
+  text-decoration: underline;
+}
+.check-out
+{
+  font-family: 'Hind Vadodara', sans-serif;
+}
+.total-items
+{
+  font-family: 'Handlee', cursive;
+  color:white;
+}
+.total-items:hover
+{
+  text-decoration: underline;
+}
+.check-out:hover
+{
+  color:purple;
+}
+.selected-item:hover
+{
+  background-color: blueviolet;
+  transform:scaleX(1.1);
+}
+.selected-item-name
+{
+  padding:7px;
+  margin:0;
+  padding-left:30px;
+  font-family: 'Lexend Deca', sans-serif;
+  text-decoration: underline;
+}
+#img-desc-wrapper
+{
+  display:flex;
+}
+.selected-item
+{
+  border:1px solid black;
+  margin-left:100px;
+  margin-bottom: 50px;
+  color:black;
+  background-color: deeppink;
+  width:600px;
+  height:100px;
+}
+.size
+{
+  margin:0;
+  padding-left:30px;
+  font-family: 'Cardo', serif;
+  font-size:15px;
+  color:white;
+}
+.selected-item-price
+{
+  padding-left:30px;
+  padding-top:10px;
+  font-family: 'Cardo', serif;
+  font-size:15px;
+  color:white;
+}
+#total-amount
+{
+  border:2px solid deeppink;
+  border-radius:10px;
+  width:50%;
+  height:300px;
+  margin-right:50px;
+  margin-bottom:50px;
+  margin-left:300px;
+  text-align:center;
+}
+#total
+{
+  padding-top:50px;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size:25px;
+}
+.amount
+{
+  color:white;
+  padding-right:45px;
+  font-family: 'Courgette', cursive;
+  font-size:20px;
+}
+#btn
+{
+  padding:10px;
+  background-color: deeppink;
+  color:black;
+  margin:50px;
+  margin-top:0;
+  margin-right:68px;
+  font-family: 'Satisfy', cursive;
+  border:2px solid white;
+  width:150px;
+  height:80px;
+  font-size:25px;
+  border-radius:10px;
+}
+#btn:hover
+{
+  background-color: palevioletred;
+  border:2px solid deeppink;
+}
+#selected-page
+{
+  display:flex;
+}
+section
+{
+  margin:100px;
+}
+/* ---------order-confirmation---------- */
 #order-placed
 {
   color:black;
@@ -484,53 +510,37 @@ section
 #email-info
 {
   color:green;
+  font-family: 'Great Vibes', cursive;
+  font-size:18px;
 }
 #email-info:hover
 {
   text-decoration:underline;
 }
-footer
+#main-section
 {
-  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/30/36/pink-bubble-background-vector-3843036.jpg");
-  display:flex;
+  height:500px;
+  text-align:center ;
+  color:deeppink;
+  background-color:white;
 }
-.edyoda-logo
+#order-place-logo
 {
-  margin-right:0;
-  margin-left:80px;
-  margin-top:100px;
+  padding-top:30px;
+}
+#order-place-logo:hover
+{
+  transform: scale(1.2);
 }
 #logo-1
 {
-  color:blue;
-  font-family: 'Dancing Script', cursive;
-  margin-top:50px;
-  text-decoration: none;
-  font-weight: 1600;
+  background-color:white;
+  padding:0;
+  margin:0;
 }
 #logo-2
 {
-  color:grey;
-  font-family: 'Livvic', sans-serif;
-}
-.footer-content
-{
-  display:inline-block;
-  padding:50px;
-  padding-left:120px;
-  font-size:10px;
-  text-decoration: underline;
-}
-.footer-content:hover
-{
-  color:blue;
-}
-.footer-content div
-{
-  font-family: 'Roboto Condensed', sans-serif;
-   padding:7px;
-}
-#email-info
-{
-  font-family: 'Great Vibes', cursive;
+  background-color:white;
+  padding:0;
+  margin:0;
 }
