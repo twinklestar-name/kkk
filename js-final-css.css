@@ -59,7 +59,7 @@ input
   background-color: black;
   border:none;
   margin:20px 100px;
-  border-radius:8px;
+  border-radius:12px;
 }
 input:hover{
   width:500px;
@@ -82,20 +82,18 @@ input:hover{
 }
 #logo:hover
 {
-  color:purple;
-  transform: scale(1.2);
-  
+  transform: scale(1.2); 
 }
 #cart-counting
 {
   position: absolute;
   top:30px;
   right:160px;
-  width:15px;
-  height:15px;
+  width:20px;
+  height:20px;
   background-color: green;
   color:white;
-  font-size:10px;
+  font-size:15px;
   border:none;
   border-radius: 10px;
 }
@@ -496,11 +494,19 @@ footer
   background-image: url("https://cdn2.vectorstock.com/i/1000x1000/30/36/pink-bubble-background-vector-3843036.jpg");
   display:flex;
 }
+.edyoda-logo
+{
+  margin-right:0;
+  margin-left:80px;
+  margin-top:100px;
+}
 #logo-1
 {
-  color:black;
+  color:blue;
   font-family: 'Dancing Script', cursive;
   margin-top:50px;
+  text-decoration: none;
+  font-weight: 1600;
 }
 #logo-2
 {
@@ -513,10 +519,16 @@ footer
   padding:50px;
   padding-left:120px;
   font-size:10px;
+  text-decoration: underline;
+}
+.footer-content:hover
+{
+  color:blue;
 }
 .footer-content div
 {
   font-family: 'Roboto Condensed', sans-serif;
+   padding:7px;
 }
 #email-info
 {
