@@ -2,22 +2,18 @@
 <html>
   <head>
     <title>js-final-1</title>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,width=device-width">
-    
-    <link rel="stylesheet" href="/nikita3/niki4/slick-demo/slick-1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="/nikita3/niki4/slick-demo/slick-1.8.1/slick/slick-theme.css"/>
-    <link href='/nikita3/niki4/slick-demo/js-final-css.css' rel='stylesheet'/>
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Satisfy&display=swap" rel="stylesheet">
-    
-     <script
+    <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/nikita3/niki4/slick-demo/slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="/nikita3/niki4/slick-demo/slick-1.8.1/slick/slick-theme.css"/>
+    <link href='/nikita3/niki4/slick-demo/js-final-css.css' rel='stylesheet'/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,width=device-width">
     <script src="https://kit.fontawesome.com/02439a4d2c.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Satisfy&display=swap" rel="stylesheet">
   </head>
   <body>
     <main>
@@ -25,12 +21,12 @@
       <span><img id="website-icon"src="https://previews.123rf.com/images/valentint/valentint1704/valentint170402478/76632928-shopping-cart-icon-shopping-cart-website-button-on-white-background-.jpg"/></span>
       <span id="shop"><b>SHOP</b></span>
       <span id="lane">LANE</span>
-      <span class="topbar2">CLOTHING</span>
-      <span class="topbar2">ACCESSORIES</span>
+      <span class="topbar2"><a href='#clothing'>CLOTHING</a></span>
+      <span class="topbar2"><a href='#accessories'>ACCESSORIES</a></span>
       <span><input type="text" placeholder="              Search for Clothing and Accessories"></span>
       <span id="zoom"><i class="fas fa-search"></i></span>
       <span id="logo"><i class="fas fa-shopping-cart"></i></span>
-      <button id="cart-counting">0</button>
+      <a href="/nikita3/niki4/slick-demo/js-final-3-html.html"><button id="cart-counting">0</button></a>
       <span><img id="profile-pic" src="https://lh3.googleusercontent.com/a-/AAuE7mCmZgrUwR_qCVu7qHZl47IR-CC4ASpVL_C9dy5B0w=s96-cc" /></span>
       </nav>
       <div id="topbarnext">
@@ -51,7 +47,12 @@
       <img src="https://i.pinimg.com/originals/d4/30/57/d43057dbc53e7309ae5bb6eac27e9bc6.jpg"/>
       <img src="https://previews.123rf.com/images/roywylam/roywylam1404/roywylam140400002/27163739-sale-banner-shopping-bags-carrier-bags-icons-symbols.jpg"/>
       </div>
-      <h1 class="heading">Clothing and Accessories for Men and Women</h1>
+      <div id='clothing'>
+      <h1 class="heading">Clothing for Men and Women</h1>
+      </div>
+      <div id='accessories'>
+      <h1 class="heading">Accessories for Men and Women</h1>
+      </div>
       <div id="main">
       <!--<span class="item-wrapper">
         <span class="item">
