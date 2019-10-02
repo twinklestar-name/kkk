@@ -1,15 +1,12 @@
 console.log("js-3-loaded")
-
-  var cardd=window.localStorage.getItem("cart-count")
+var cardd=window.localStorage.getItem("cart-count")
   console.log(cardd)
-  var total=document.getElementsByClassName('total-items');
-  console.log(total)
-  total.innerHTML='total-items:    '+cardd;
-  
+  $('.total-items').html(`Total-Items: ${cardd}`)
 
+  var main;
   function detailItems(array){
 
-    var main=document.createElement('div');
+    main=document.createElement('div');
     main.id="img-desc-wrapper";
     var pageWrapper=document.createElement('div');
     pageWrapper.className=("selected-item");
@@ -47,10 +44,15 @@ console.log("js-3-loaded")
     var priceValue=document.createTextNode('price: '+array.price);
     pdtPrice.appendChild(priceValue);
     pdtDesc.appendChild(pdtPrice);
-    
+  
+    return main;
+    }
+
+    function asidePart(price)
+    {
     var totalAmount=document.createElement('aside')
     totalAmount.id="total-amount";
-    main.appendChild(totalAmount);
+    //main.appendChild(totalAmount);
     
     var total=document.createElement('h3')
     total.id="total";
@@ -60,7 +62,7 @@ console.log("js-3-loaded")
     
     var amount=document.createElement('h5')
     amount.className="amount";
-    var amountTextnode=document.createTextNode('Amount:Rs')
+    var amountTextnode=document.createTextNode('Amount : Rs '+price)
     amount.appendChild(amountTextnode)
     totalAmount.appendChild(amount);
     
@@ -73,8 +75,8 @@ console.log("js-3-loaded")
     var btnTextnode=document.createTextNode('Place Order')
     button.appendChild(btnTextnode)
     anchor.appendChild(button)
-  
-    return main;
+
+    return totalAmount;
     }
   
   var detailCard=document.getElementById('selected-page')
@@ -88,17 +90,31 @@ console.log("js-3-loaded")
         {
           console.log('call is successful')
           var array=JSON.parse(this.responseText);
-          
+          var selectedItems=[];
+          selectedItems=window.localStorage.getItem('selected-items-id')
+          var finalList=selectedItems.split(',')
+          console.log(finalList)
+          var priceArray=[];
+          var totalPrice=0;
               for(var i=0;i<array.length;i++)
-              {  
-                if(array[i].id==window.localStorage.getItem("id"))
+              { 
+                for(var j=0;j<finalList.length;j++)
+              {
+                if(array[i].id==finalList[j]/*window.localStorage.getItem("id")*/)
                {
-                 detailCard.appendChild(detailItems(array[i]));
+                  priceArray.push(array[i].price);
+                  totalPrice=totalPrice + array[i].price;
+                  detailCard.appendChild(detailItems(array[i]));
                }
-              else{
-                console.log('wrong clicked')
-              }
+              else
+                {
+                  console.log('wrong clicked')
+                }
+              }   
             }
+            console.log(priceArray)
+            console.log(totalPrice);
+            main.appendChild(asidePart(totalPrice));
           }
         else
           {
@@ -107,7 +123,6 @@ console.log("js-3-loaded")
       }
     }
     httpRequest.open('GET','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
-    //httpRequest.open('POST','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
     httpRequest.send();
     }
     getobjects();
