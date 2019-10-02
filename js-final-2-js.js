@@ -16,26 +16,36 @@ console.log("js-2-loaded")
     </aside>
     </div>
   </div>*/
-
+var ido=[];
+  console.log(ido)
   var count=0;
   document.body.addEventListener("click",function(event){
     
       if(event.target.className=="cart-btn")
       {
-      window.localStorage.setItem("id",event.target.id)
-      var idNo=window.localStorage.getItem("id")
-      console.log(window.localStorage.setItem("itemprice",event.target.price));
-      console.log(idNo);
+        ido.push(event.target.id)
+        ido.push(window.localStorage.getItem("selected-items-id"))
+        console.log(ido)
+        console.log(event.target)
+        window.localStorage.setItem("id",event.target.id)
+        var idNo=window.localStorage.getItem("id")
+        console.log(idNo);
+      //console.log(window.localStorage.setItem("itemprice",event.target.price));
+      count=window.localStorage.getItem('cart-count')
       count++;
       botn.innerHTML=count;
       window.localStorage.setItem("cart-count",botn.innerHTML)
+      window.localStorage.setItem("selected-items-id",ido);
       }
       else
       {
       count=count+0;
-      }
-    
+      } 
   })
+  var cardCount=window.localStorage.getItem('cart-count')
+  console.log(cardCount)
+  $('#cart-counting').html(cardCount)
+
   var botn=document.getElementById('cart-counting')
   console.log(botn.innerHTML)
   console.log(botn)
@@ -107,20 +117,33 @@ console.log("js-2-loaded")
     pdtDesc.appendChild(pdtPreview)
     for(var j=0;j<array.photos.length;j++)
     {
+      createproductphotos(array.photos[j],j);
+    }
+    pdtDesc.appendChild(btn)
+    return pageWrapper;
+
+    function createproductphotos(pics,pos)
+    {
       var pose1=document.createElement('img')
+      if(pos===0)
+      {
+        console.log('hi')
+        pose1.classList.add('active-image')
+      }
+      pose1.onclick=function(e)
+      {
+        console.log('hello')
+        $('#pdt-desc img').removeClass('active-image')
+        pose1.classList.add('active-image')
+        pdtImage.src=e.target.src;
+      }
       pose1.className="poses";
-      pose1.src=array.photos[j];
+      pose1.src=pics;
       pose1.setAttribute("width","80px")
       pose1.setAttribute("height","100px")
       pdtDesc.appendChild(pose1)
     }
-    document.body.addEventListener("click",function(event){
-       pdtImage.src=event.target.src;
-    })
-    pdtDesc.appendChild(btn)
-    return pageWrapper;
-    }
-  
+  }
 
   var detailCard=document.getElementById('page-2')
   function getobjects(){
