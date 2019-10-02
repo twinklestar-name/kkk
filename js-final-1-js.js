@@ -28,25 +28,23 @@ $(document).ready(function(){
         </span>
         </a>
         </span>*/
-
 document.body.addEventListener("click",function(event){
   if(event.target.className=="item")
   {
   window.localStorage.setItem("id",event.target.id);
-  console.log(window.localStorage.getItem("id"));
-  window.open("/nikita3/niki4/slick-demo/js-final-2-html.html");
+  window.open("/nikita3/niki4/slick-demo/js-final-2-html.html",'_self');
   }
 })
-
-          
-
+var cardCount=window.localStorage.getItem('cart-count')
+console.log(cardCount)
+$('#cart-counting').html(cardCount)
 
 function shoppingItems(idval,imageval,name,brand,priceval){
   var itemsWrapper=document.createElement('span');
   itemsWrapper.className="item-wrapper";
 
   var itemLink=document.createElement('a')
-  itemLink.href="/nikita3/niki4/slick-demo/js-final-2-html.html";
+  //itemLink.href="/nikita3/niki4/slick-demo/js-final-2-html.html";
 
   var item=document.createElement('span');
   item.className="item";
@@ -59,7 +57,6 @@ function shoppingItems(idval,imageval,name,brand,priceval){
   image.setAttribute("src",imageval);
   image.setAttribute("width","150px");
   image.setAttribute("height","200px");
-  //image.setAttribute("padding-right","20px");
   item.appendChild(image);
 
   var heading1=document.createElement('h3');
@@ -86,8 +83,15 @@ function shoppingItems(idval,imageval,name,brand,priceval){
 
   return itemsWrapper;
 }
-
-var cardName=document.getElementById('main');
+/*var selecteditems=[];
+$('.item').click(function(e){
+  console.log('hi')
+  console.log(e.target.id)
+  selecteditems.push(e.target.id)
+  console.log(selecteditems)
+  window.open("/nikita3/niki4/slick-demo/js-final-2-html.html");
+})
+console.log(selecteditems)*/
 
 function getobjects(){
 var httpRequest= new XMLHttpRequest();
@@ -105,14 +109,16 @@ httpRequest.onreadystatechange=function(){
         {
         console.log(array[i])
         var cards=shoppingItems(array[i].id,array[i].preview,array[i].name,array[i].brand,array[i].price);
-        cardName.appendChild(cards);
+        //cardName.appendChild(cards);
+        $('#clothing').append(cards);
         }
         if(array[i].isAccessory==true)
           {
 
           console.log(array[i])
           var cards=shoppingItems(array[i].id,array[i].preview,array[i].name,array[i].brand,array[i].price);
-          cardName.appendChild(cards);
+          //cardName.appendChild(cards);
+          $('#accessories').append(cards);
           }
       }
           
@@ -140,4 +146,3 @@ httpRequest.open('GET','https://5d76bf96515d1a0014085cf9.mockapi.io/product',tru
 httpRequest.send();
 }
 getobjects();
-
