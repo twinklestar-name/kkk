@@ -66,7 +66,7 @@ var cardd=window.localStorage.getItem("cart-count")
     totalAmount.appendChild(amount);
     
     var anchor=document.createElement('a')
-    anchor.href="/nikita3/niki4/slick-demo/js-final-4-html.html";
+    anchor.href="./js-final-4-html.html";
     totalAmount.appendChild(anchor)
     
     var button=document.createElement('button')
