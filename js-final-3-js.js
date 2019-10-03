@@ -52,7 +52,6 @@ var cardd=window.localStorage.getItem("cart-count")
     {
     var totalAmount=document.createElement('aside')
     totalAmount.id="total-amount";
-    //main.appendChild(totalAmount);
     
     var total=document.createElement('h3')
     total.id="total";
@@ -100,7 +99,7 @@ var cardd=window.localStorage.getItem("cart-count")
               { 
                 for(var j=0;j<finalList.length;j++)
               {
-                if(array[i].id==finalList[j]/*window.localStorage.getItem("id")*/)
+                if(array[i].id==finalList[j])
                {
                   priceArray.push(array[i].price);
                   totalPrice=totalPrice + array[i].price;
