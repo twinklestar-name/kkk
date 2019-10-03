@@ -32,7 +32,7 @@ document.body.addEventListener("click",function(event){
   if(event.target.className=="item")
   {
   window.localStorage.setItem("id",event.target.id);
-  window.open("/nikita3/niki4/slick-demo/js-final-2-html.html",'_self');
+  window.open("./js-final-2-html.html",'_self');
   }
 })
 var cardCount=window.localStorage.getItem('cart-count')
@@ -44,7 +44,7 @@ function shoppingItems(idval,imageval,name,brand,priceval){
   itemsWrapper.className="item-wrapper";
 
   var itemLink=document.createElement('a')
-  //itemLink.href="/nikita3/niki4/slick-demo/js-final-2-html.html";
+  itemLink.href="/nikita3/niki4/slick-demo/js-final-2-html.html";
 
   var item=document.createElement('span');
   item.className="item";
@@ -83,16 +83,6 @@ function shoppingItems(idval,imageval,name,brand,priceval){
 
   return itemsWrapper;
 }
-/*var selecteditems=[];
-$('.item').click(function(e){
-  console.log('hi')
-  console.log(e.target.id)
-  selecteditems.push(e.target.id)
-  console.log(selecteditems)
-  window.open("/nikita3/niki4/slick-demo/js-final-2-html.html");
-})
-console.log(selecteditems)*/
-
 function getobjects(){
 var httpRequest= new XMLHttpRequest();
 httpRequest.onreadystatechange=function(){
@@ -109,7 +99,6 @@ httpRequest.onreadystatechange=function(){
         {
         console.log(array[i])
         var cards=shoppingItems(array[i].id,array[i].preview,array[i].name,array[i].brand,array[i].price);
-        //cardName.appendChild(cards);
         $('#clothing').append(cards);
         }
         if(array[i].isAccessory==true)
@@ -117,7 +106,6 @@ httpRequest.onreadystatechange=function(){
 
           console.log(array[i])
           var cards=shoppingItems(array[i].id,array[i].preview,array[i].name,array[i].brand,array[i].price);
-          //cardName.appendChild(cards);
           $('#accessories').append(cards);
           }
       }
@@ -125,14 +113,9 @@ httpRequest.onreadystatechange=function(){
       $(document).ready(function(){
         $('#main').slick({
         centerMode: true,
-        //centerPadding: '60px',
         slidesToShow: 3,
         dots:true,
-          //infinite: true,
-          //slidesToShow: 1,
           slidesToScroll: 1,
-          //autoplay: true,
-          //autoplaySpeed: 1000
         });
       });
     }
@@ -142,7 +125,6 @@ httpRequest.onreadystatechange=function(){
   }
 }
 httpRequest.open('GET','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
-//httpRequest.open('POST','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
 httpRequest.send();
 }
 getobjects();
