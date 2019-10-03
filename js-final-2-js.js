@@ -30,7 +30,6 @@ var ido=[];
         window.localStorage.setItem("id",event.target.id)
         var idNo=window.localStorage.getItem("id")
         console.log(idNo);
-      //console.log(window.localStorage.setItem("itemprice",event.target.price));
       count=window.localStorage.getItem('cart-count')
       count++;
       botn.innerHTML=count;
@@ -176,7 +175,6 @@ var ido=[];
       }
     }
     httpRequest.open('GET','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
-    //httpRequest.open('POST','https://5d76bf96515d1a0014085cf9.mockapi.io/product',true)
     httpRequest.send();
     }
     getobjects();
