@@ -44,7 +44,7 @@ function shoppingItems(idval,imageval,name,brand,priceval){
   itemsWrapper.className="item-wrapper";
 
   var itemLink=document.createElement('a')
-  itemLink.href="/nikita3/niki4/slick-demo/js-final-2-html.html";
+  itemLink.href="./js-final-2-html.html";
 
   var item=document.createElement('span');
   item.className="item";
